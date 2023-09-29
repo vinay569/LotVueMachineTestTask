@@ -169,13 +169,16 @@ public class OperationsPage extends CommonUtility {
 	}
 
 	public void selectCommunity(String communitytype, String status) {
+		scrollDown(driver.findElement(By.xpath("//select[@name='listing_status[" + communitytype + "][]']//parent::span")));
 		click(driver.findElement(By.xpath("//select[@name='listing_status[" + communitytype + "][]']//parent::span")));
+		
 		WebElement chekbox = driver.findElement(By.xpath(
-				"//select[@name='listing_status[Mil Colores][]']//parent::span//following-sibling::li//input[@value='"
+				"//select[@name='listing_status[" + communitytype + "][]']//parent::span//following-sibling::li//input[@value='"
 						+ status + "']"));
 		if(!chekbox.isSelected()) {
-		click(chekbox);
+			click(chekbox);
 		}
+		
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {

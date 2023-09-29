@@ -15,7 +15,7 @@ public class LoginPage extends CommonUtility {
 
 	@FindBy(id = "tbluser_email")
 	WebElement username;
-	
+
 	@FindBy(xpath = "//form[@id='sign_in_check']/h2")
 	WebElement login;
 
@@ -59,19 +59,20 @@ public class LoginPage extends CommonUtility {
 	public WebElement getAdminName() {
 		return adminName;
 	}
+
 	public WebElement getLogin() {
 		return login;
 	}
 
 	// -----------------------//
-	
+
 	public boolean LoginPageDetails(String msg) {
 		String m = getText(getLogin());
 		System.out.println(m);
 		return m.contains(msg);
 
 	}
-	
+
 	public void loginWithoutData() {
 		click(getLoginButton());
 	}
@@ -85,11 +86,15 @@ public class LoginPage extends CommonUtility {
 	public boolean verifyUserProfile() {
 
 		click(getAdminIcon());
-		String name = getText(getAdminName());
-		if(name.equals(getPropertyValue("profilename"))) {
-			return true;
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
-		else {
+		String name = getText(getAdminName());
+		if (name.equals(getPropertyValue("profilename"))) {
+			return true;
+		} else {
 			return false;
 		}
 

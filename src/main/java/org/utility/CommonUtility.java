@@ -66,6 +66,11 @@ public class CommonUtility {
 			ex.printStackTrace();
 		}
 	}
+	public static void scrollDown(WebElement e) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true)", e);
+
+	}
 
 	public static void switchWindow(int i) {
 		String id = driver.getWindowHandle();

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>LotVue</td>
+      <td>29 Sep 2023, 16:57</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">org.stepdefinition.Hooks.setup()</td>
+              <td>1</td>
+              <td class="duration" data-value="2021000000">2.021</td>
+              <td class="duration" data-value="2021000000">2.021</td>
+              <td class="duration" data-value="2021000000">2.021</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.Hooks.tearDown(io.cucumber.java.Scenario)</td>
+              <td>1</td>
+              <td class="duration" data-value="904000000">0.904</td>
+              <td class="duration" data-value="904000000">0.904</td>
+              <td class="duration" data-value="904000000">0.904</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.after_login_click_on_the_operations_dropdown_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="177000000">0.177</td>
+              <td class="duration" data-value="177000000">0.177</td>
+              <td class="duration" data-value="177000000">0.177</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.based_on_the_entered_login_details_it_should_show_error_message_or_username()</td>
+              <td>1</td>
+              <td class="duration" data-value="3225000000">3.225</td>
+              <td class="duration" data-value="3225000000">3.225</td>
+              <td class="duration" data-value="3225000000">3.225</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.click_on_the_specific_sales_statuses_drop_downs_and_from_the_statuses_drop_down_list_click_on_the_checkbox(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="4230000000">4.230</td>
+              <td class="duration" data-value="4230000000">4.230</td>
+              <td class="duration" data-value="4230000000">4.230</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.enter_url_of_the_website(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3372000000">3.372</td>
+              <td class="duration" data-value="3372000000">3.372</td>
+              <td class="duration" data-value="3372000000">3.372</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_click_on_the_accordion(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3148000000">3.148</td>
+              <td class="duration" data-value="3148000000">3.148</td>
+              <td class="duration" data-value="3148000000">3.148</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_click_on_the_login_button_without_entering_the_login_credentials()</td>
+              <td>1</td>
+              <td class="duration" data-value="139000000">0.139</td>
+              <td class="duration" data-value="139000000">0.139</td>
+              <td class="duration" data-value="139000000">0.139</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_click_on_the_manage_settings_icon()</td>
+              <td>1</td>
+              <td class="duration" data-value="189000000">0.189</td>
+              <td class="duration" data-value="189000000">0.189</td>
+              <td class="duration" data-value="189000000">0.189</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_enter_the_uname_and_password(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1835000000">1.835</td>
+              <td class="duration" data-value="1835000000">1.835</td>
+              <td class="duration" data-value="1835000000">1.835</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_selects_setting_option_from_the_list(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3927000000">3.927</td>
+              <td class="duration" data-value="3927000000">3.927</td>
+              <td class="duration" data-value="3927000000">3.927</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_should_able_to_see_the_list_of_settings_options()</td>
+              <td>1</td>
+              <td class="duration" data-value="3073000000">3.073</td>
+              <td class="duration" data-value="3073000000">3.073</td>
+              <td class="duration" data-value="3073000000">3.073</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_should_be_able_to_see_all_the_communities_in(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="299000000">0.299</td>
+              <td class="duration" data-value="299000000">0.299</td>
+              <td class="duration" data-value="299000000">0.299</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_should_be_able_to_see_page_with_all_the_information(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="111000000">0.111</td>
+              <td class="duration" data-value="111000000">0.111</td>
+              <td class="duration" data-value="111000000">0.111</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_should_be_able_to_see_the_list_of_product_type_options()</td>
+              <td>1</td>
+              <td class="duration" data-value="148000000">0.148</td>
+              <td class="duration" data-value="148000000">0.148</td>
+              <td class="duration" data-value="148000000">0.148</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_should_see_page_with_all_the_details(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="60000000">0.060</td>
+              <td class="duration" data-value="60000000">0.060</td>
+              <td class="duration" data-value="60000000">0.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.i_should_see_user_validation_text_messages()</td>
+              <td>1</td>
+              <td class="duration" data-value="70000000">0.070</td>
+              <td class="duration" data-value="70000000">0.070</td>
+              <td class="duration" data-value="70000000">0.070</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.save_the_details()</td>
+              <td>1</td>
+              <td class="duration" data-value="2840000000">2.840</td>
+              <td class="duration" data-value="2840000000">2.840</td>
+              <td class="duration" data-value="2840000000">2.840</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefinition.LotVue.select_the_product_type_from_the_list(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="6161000000">6.161</td>
+              <td class="duration" data-value="6161000000">6.161</td>
+              <td class="duration" data-value="6161000000">6.161</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>19</td>
+            <td>19</td>
+            <td class="duration">1.891</td>
+            <td class="duration">6.161</td>
+            <td class="duration">35.929</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
